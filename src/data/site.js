@@ -61,8 +61,87 @@ export const about = {
 
 export const projects = [
   {
-    id: 'soukra',
+    id: 'ordre-architectes',
     number: '01',
+    title: 'Siège de l’Ordre des  architectes',
+    subtitle: 'El Manar, Tunis',
+    type: 'Équipement institutionnel · APS',
+    location: 'El Manar, Tunis, Tunisie',
+    detailLabel: 'Programme',
+    surface: 'Salle de conférence de 400 places',
+    summary:
+      'La conception du siège de l’Ordre des architectes : un équipement institutionnel réunissant espaces administratifs, professionnels et événementiels.',
+    body: [
+      'La démarche cherche un équilibre entre identité institutionnelle, fonctionnalité et expression architecturale, en articulant les espaces administratifs et les espaces ouverts au public, notamment la salle de conférence de 400 places, avec des accès lisibles et des circulations fluides.',
+      'Le travail sur les volumes, les pleins et les vides, ainsi que sur la lumière naturelle, définit une architecture contemporaine, cohérente et en dialogue avec son environnement urbain.',
+      'Une réflexion sur l’équipement institutionnel, où les exigences programmatiques, techniques et réglementaires deviennent des leviers de composition architecturale.',
+    ],
+    images: [
+      {
+        src: '/images/ordre-vue-aerienne.webp',
+        alt: 'Vue aérienne du siège de l’Ordre des architectes à El Manar au coucher du soleil, avec sa toiture ondulée blanche et ses lames de bois',
+        caption: 'Vue aérienne — toiture ondulée et façade en lames de bois',
+        span: 'wide',
+      },
+      {
+        src: '/images/ordre-facade.webp',
+        alt: 'Façade du siège de l’Ordre des architectes à El Manar, lames de bois et grandes baies vitrées',
+        caption: 'Façade — pleins, vides et lumière naturelle',
+        span: 'wide',
+      },
+      {
+        src: '/images/ordre-hall.webp',
+        alt: 'Hall d’accueil du siège de l’Ordre des architectes, double hauteur et salon lumineux',
+        caption: 'Intérieur — hall d’accueil',
+        span: 'half',
+      },
+      {
+        src: '/images/ordre-buvette.webp',
+        alt: 'Buvette du siège de l’Ordre des architectes ouverte sur un jardin par de grandes baies vitrées',
+        caption: 'Intérieur — buvette',
+        span: 'half',
+      },
+      {
+        src: '/images/ordre-plan-implantation.webp',
+        alt: 'Plan d’implantation du siège de l’Ordre des architectes dans son environnement, échelle 1/500',
+        caption: 'Plan d’implantation — 1/500',
+        span: 'half',
+      },
+      {
+        src: '/images/ordre-plan-rdc.webp',
+        alt: 'Plan du niveau +0.5 m : réception, bureaux, salle de conseil, salle de conférence, hall d’accueil et buvette',
+        caption: 'Plan niveau +0.5 m — 1/200',
+        span: 'half',
+      },
+      {
+        src: '/images/ordre-plan-sous-sol.webp',
+        alt: 'Plan du sous-sol à -3.1 m : parking en sous-sol',
+        caption: 'Plan niveau -3.1 m — parking, 1/200',
+        span: 'half',
+      },
+      {
+        src: '/images/ordre-plan-niveau-5.webp',
+        alt: 'Plan du niveau +5.1 m avec la salle de conférence de 400 places',
+        caption: 'Plan niveau +5.1 m — 1/200',
+        span: 'half',
+      },
+      {
+        src: '/images/ordre-plan-niveau-7.webp',
+        alt: 'Plan du niveau +7.3 m : espace d’exposition permanente',
+        caption: 'Plan niveau +7.3 m — exposition, 1/200',
+        span: 'half',
+      },
+      {
+        src: '/images/ordre-plan-niveau-11.webp',
+        alt: 'Plan du niveau +11 m : ateliers et espace de détente',
+        caption: 'Plan niveau +11 m — ateliers, 1/200',
+        span: 'half',
+      },
+    ],
+  },
+  {
+    id: 'soukra',
+    number: '02',
     title: 'Ensemble résidentiel pour le vivre-ensemble',
     subtitle: 'La Soukra',
     type: 'Projet académique',
@@ -146,7 +225,7 @@ export const projects = [
   },
   {
     id: 'halle',
-    number: '02',
+    number: '03',
     title: 'Conception d’une halle événementielle',
     subtitle: 'Phase APS',
     type: 'Projet académique',
@@ -199,7 +278,7 @@ export const projects = [
   },
   {
     id: 'etage-prive',
-    number: '03',
+    number: '04',
     title: 'Plan d’étage — client privé',
     subtitle: 'Réaménagement complet',
     type: 'Projet non académique',

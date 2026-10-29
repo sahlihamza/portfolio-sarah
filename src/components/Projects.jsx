@@ -11,6 +11,14 @@ const DRAWINGS = ['plan-', 'moodboard', 'coupe', 'materiaux']
 
 /** Ratio imposé pour les visuels très horizontaux, afin d'éviter des bandes vides. */
 const ASPECTS = {
+  '/images/ordre-vue-aerienne.webp': 'aspect-[12/5]',
+  '/images/ordre-facade.webp': 'aspect-[3/1]',
+  '/images/ordre-plan-implantation.webp': 'aspect-[3/2]',
+  '/images/ordre-plan-rdc.webp': 'aspect-[3/2]',
+  '/images/ordre-plan-sous-sol.webp': 'aspect-[3/2]',
+  '/images/ordre-plan-niveau-5.webp': 'aspect-[3/2]',
+  '/images/ordre-plan-niveau-7.webp': 'aspect-[3/2]',
+  '/images/ordre-plan-niveau-11.webp': 'aspect-[3/2]',
   '/images/soukra-coupe.png': 'aspect-[12/5]',
   '/images/soukra-plan-masse.png': 'aspect-square',
   '/images/soukra-plan-rdc.png': 'aspect-[16/9]',
@@ -76,7 +84,7 @@ function ProjectBlock({ project }) {
               <dd className="mt-1.5 text-sm text-ink-2">{project.location}</dd>
             </div>
             <div>
-              <dt className="eyebrow">Surface</dt>
+              <dt className="eyebrow">{project.detailLabel ?? 'Surface'}</dt>
               <dd className="mt-1.5 text-sm text-ink-2">{project.surface}</dd>
             </div>
           </dl>
