@@ -7,14 +7,17 @@ import { ArrowDown, ArrowUpRight } from './Icons'
 
 export default function Hero() {
   return (
-    <section id="accueil" className="wrap pt-12 pb-16 md:pt-20 md:pb-24">
+    <div className="relative overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-sky/50 blur-3xl" />
+      <div aria-hidden="true" className="pointer-events-none absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-mist blur-3xl" />
+    <section id="accueil" className="wrap relative pt-12 pb-16 md:pt-20 md:pb-24">
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <Reveal variant="blur" className="min-w-0 lg:col-span-7">
           <p className="eyebrow">Portfolio · Architecture · 20227–2028</p>
 
           <h1 className="hero-title mt-6 text-hero font-display">
-            <span className="hero-title-line"><span>ZAITER</span></span>
-            <span className="hero-title-line text-ink-3"><span>Sarra</span></span>
+            <span className="hero-title-line"><span>Zaiter</span></span>
+            <span className="hero-title-line italic font-light text-crimson"><span>Sarra</span></span>
           </h1>
 
           <div className="rule mt-10" />
@@ -48,8 +51,9 @@ export default function Hero() {
         </Reveal>
 
         <Reveal variant="right" delay={120} className="min-w-0 lg:col-span-5">
-          <figure>
-            <ImageReveal className="overflow-hidden border border-line bg-muted">
+          <figure className="relative">
+            <div aria-hidden="true" className="absolute -bottom-4 -right-4 h-full w-full rounded-t-[10rem] bg-sky" />
+            <ImageReveal className="relative overflow-hidden rounded-t-[10rem] bg-muted shadow-[0_24px_60px_-28px_rgb(29_53_87/0.5)]">
               <Parallax>
               <img
                 src="/images/portrait.jpg"
@@ -85,5 +89,6 @@ export default function Hero() {
         </dl>
       </Reveal>
     </section>
+    </div>
   )
 }

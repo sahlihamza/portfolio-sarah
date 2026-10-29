@@ -4,7 +4,7 @@ import { ArrowUpRight, Mail, MapPin, Phone } from './Icons'
 
 export default function Contact() {
   return (
-    <section id="contact" className="border-t border-line bg-card">
+    <section id="contact" className="bg-mist">
       <div className="wrap py-16 md:py-24">
         <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
@@ -20,7 +20,7 @@ export default function Contact() {
           <div className="grid gap-px border-y border-line sm:grid-cols-3">
             <a
               href={`mailto:${profile.email}`}
-              className="group flex min-w-0 cursor-pointer items-start gap-3 py-6 transition-colors duration-200 hover:bg-paper sm:px-6"
+              className="group flex min-w-0 cursor-pointer items-start gap-3 py-6 transition-colors duration-200 hover:bg-paper/70 sm:px-6"
             >
               <Mail className="mt-1 shrink-0 text-ink-3" />
               <span>
@@ -31,7 +31,7 @@ export default function Contact() {
 
             <a
               href={`tel:${profile.phone.replace(/\s/g, '')}`}
-              className="group flex min-w-0 cursor-pointer items-start gap-3 py-6 transition-colors duration-200 hover:bg-paper sm:px-6"
+              className="group flex min-w-0 cursor-pointer items-start gap-3 py-6 transition-colors duration-200 hover:bg-paper/70 sm:px-6"
             >
               <Phone className="mt-1 shrink-0 text-ink-3" />
               <span>

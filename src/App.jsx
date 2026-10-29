@@ -22,9 +22,9 @@ export default function App() {
 
       <main id="contenu">
         <Hero />
-        <Marquee items={['Architecture', 'Conception', 'Plans & coupes', 'Maquettes 3D', 'Rendus', 'Espace']} />
+        <Marquee className="bg-mist" items={['Architecture', 'Conception', 'Plans & coupes', 'Maquettes 3D', 'Rendus', 'Espace']} />
         <About />
-        <Marquee reverse items={['AutoCAD', 'Revit', 'Lumion', 'Twinmotion', 'Photoshop']} />
+        <Marquee reverse className="bg-sky" items={['AutoCAD', 'Revit', 'Lumion', 'Twinmotion', 'Photoshop']} />
         <Projects />
         <Contact />
       </main>

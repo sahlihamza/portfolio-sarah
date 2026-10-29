@@ -5,7 +5,7 @@ import SplitText from './motion/SplitText'
 
 export default function About() {
   return (
-    <section id="apropos" className="border-t border-line">
+    <section id="apropos">
       <div className="wrap py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal variant="left" className="min-w-0 lg:col-span-5">
@@ -66,7 +66,7 @@ export default function About() {
                   {about.qualities.map((quality) => (
                     <li
                       key={quality}
-                      className="rounded-full border border-line px-3.5 py-1.5 text-sm text-ink-2"
+                      className="rounded-full border border-sky bg-muted/60 px-3.5 py-1.5 text-sm text-ink-2 transition-colors duration-200 hover:bg-sky"
                     >
                       {quality}
                     </li>

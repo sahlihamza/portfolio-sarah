@@ -104,7 +104,7 @@ function ProjectBlock({ project }) {
 
 export default function Projects() {
   return (
-    <section id="projets" className="border-t border-line bg-card">
+    <section id="projets" className="bg-muted">
       <div className="wrap py-16 md:py-24">
         <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
@@ -135,7 +135,7 @@ export default function Projects() {
                   <ArrowUpRight
                     width={18}
                     height={18}
-                    className="shrink-0 text-ink-3 transition-colors duration-200 group-hover:text-ink"
+                    className="shrink-0 text-ink-3 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
                   />
                 </a>
               </li>
