@@ -1,12 +1,14 @@
 import { profile } from '../data/site'
 import { ArrowUp } from './Icons'
 
+const YEAR = new Date().getFullYear()
+
 export default function Footer() {
   return (
     <footer className="border-t border-line">
       <div className="wrap flex flex-col items-start justify-between gap-4 py-10 sm:flex-row sm:items-center">
         <p className="text-xs text-ink-3">
-          © {new Date().getFullYear()} {profile.fullName} — Portfolio d’architecture · {profile.promo}
+          © {YEAR} {profile.fullName} — Portfolio d’architecture · {profile.promo}
         </p>
         <a
           href="#accueil"
