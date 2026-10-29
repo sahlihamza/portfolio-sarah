@@ -129,6 +129,241 @@
   transform: none;
 }
 
+/* Staggered type entrance, inspired by React Bits' text reveals. */
+.hero-title-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+.hero-title-line > span {
+  display: block;
+  animation: title-rise 720ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.hero-title-line:nth-child(2) > span {
+  animation-delay: 110ms;
+}
+
+@keyframes title-rise {
+  from {
+    opacity: 0;
+    transform: translateY(105%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Project images reveal in sequence once their project enters the viewport. */
+.project-gallery figure {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible .project-gallery figure {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.is-visible .project-gallery figure:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.reveal.is-visible .project-gallery figure:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.reveal.is-visible .project-gallery figure:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+/* Reveal variants */
+.reveal--blur {
+  filter: blur(10px);
+  transform: translateY(18px);
+  transition-property: opacity, transform, filter;
+  transition-duration: 700ms;
+}
+
+.reveal--left {
+  transform: translateX(-28px);
+}
+
+.reveal--right {
+  transform: translateX(28px);
+  transition-duration: 700ms;
+}
+
+.reveal--scale {
+  transform: scale(0.94);
+}
+
+.reveal.is-visible {
+  filter: none;
+}
+
+/* Titre mot à mot */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+}
+
+.split-word > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.split-text.is-visible .split-word > span {
+  transform: translateY(0);
+}
+
+/* Image : rideau + dézoom */
+.img-reveal {
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 900ms cubic-bezier(0.77, 0, 0.175, 1) var(--reveal-delay, 0ms);
+}
+
+.img-zoom {
+  transform: scale(1.18);
+  transition: transform 1300ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+.img-reveal.is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+.img-reveal.is-visible .img-zoom {
+  transform: none;
+}
+
+/* Filet tracé */
+.draw-line {
+  height: 1px;
+  background-color: var(--color-ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1100ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.draw-line.is-visible {
+  transform: scaleX(1);
+}
+
+/* Barre de progression */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 70;
+  height: 3px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+/* Bandeau défilant entre sections */
+.marquee {
+  overflow: hidden;
+  padding-block: 1rem;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.marquee-track.is-reverse {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-ink);
+}
+
+.marquee-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-accent);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Bouton magnétique */
+.magnetic {
+  transition: transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Halo qui suit le curseur */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(180px circle at var(--mx, 50%) var(--my, 50%), rgb(37 99 235 / 0.14), transparent 70%);
+  opacity: 0;
+  transition: opacity 250ms;
+  pointer-events: none;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Liste des projets : fond qui glisse de gauche à droite */
+.row-fill {
+  isolation: isolate;
+}
+
+.row-fill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-paper);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.row-fill:hover::before,
+.row-fill:focus-visible::before {
+  transform: scaleX(1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -138,6 +373,27 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .project-gallery figure {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .reveal,
+  .img-reveal,
+  .img-zoom,
+  .split-word > span,
+  .draw-line {
+    filter: none;
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .marquee-track {
+    animation: none;
   }
 
   *,

@@ -1,14 +1,26 @@
 import { projects } from '../data/site'
 import Reveal from './Reveal'
+import DrawLine from './motion/DrawLine'
+import ImageReveal from './motion/ImageReveal'
+import Parallax from './motion/Parallax'
+import SplitText from './motion/SplitText'
 import { ArrowUpRight } from './Icons'
 
 /** Les drawings (plans, coupes, moodboards) ne doivent jamais être rognés. */
-const DRAWINGS = ['plan-etage', 'halle-plan', 'moodboard', 'coupe']
+const DRAWINGS = ['plan-', 'moodboard', 'coupe', 'materiaux']
 
 /** Ratio imposé pour les visuels très horizontaux, afin d'éviter des bandes vides. */
 const ASPECTS = {
   '/images/soukra-coupe.png': 'aspect-[12/5]',
-  '/images/halle-plan.png': 'aspect-[16/10]',
+  '/images/soukra-plan-masse.png': 'aspect-square',
+  '/images/soukra-plan-rdc.png': 'aspect-[16/9]',
+  '/images/soukra-plan-1er-etage.png': 'aspect-[12/5]',
+  '/images/soukra-plan-2eme-etage.png': 'aspect-[16/9]',
+  '/images/halle-plan-masse.png': 'aspect-square',
+  '/images/plan-etage-v1.png': 'aspect-square',
+  '/images/plan-etage-v2.png': 'aspect-square',
+  '/images/tunis-plan-comparatif.png': 'aspect-[3/2]',
+  '/images/tunis-materiaux.png': 'aspect-[3/2]',
 }
 
 function ProjectImage({ image }) {
@@ -17,11 +29,12 @@ function ProjectImage({ image }) {
 
   return (
     <figure className={`min-w-0 ${image.span === 'wide' ? 'col-span-1 sm:col-span-2' : 'col-span-1'}`}>
-      <div
+      <ImageReveal
         className={`overflow-hidden border border-line bg-card ${
           isDrawing ? 'p-3' : 'bg-muted'
         }`}
       >
+        <Parallax amount={isDrawing ? 0 : 0.05}>
         <img
           src={image.src}
           loading="lazy"
@@ -31,7 +44,8 @@ function ProjectImage({ image }) {
             isDrawing ? 'object-contain' : 'object-cover hover:scale-[1.03]'
           }`}
         />
-      </div>
+        </Parallax>
+      </ImageReveal>
       <figcaption className="mt-2.5 text-xs leading-relaxed text-ink-3">{image.caption}</figcaption>
     </figure>
   )
@@ -39,7 +53,9 @@ function ProjectImage({ image }) {
 
 function ProjectBlock({ project }) {
   return (
-    <Reveal as="article" id={`project-${project.id}`} className="scroll-mt-24 border-t border-line pt-12 md:pt-16">
+    <Reveal as="article" id={`project-${project.id}`} className="scroll-mt-24 pt-0">
+      <DrawLine />
+      <div className="pt-12 md:pt-16" />
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
         <div className="min-w-0 lg:col-span-5">
           <div className="flex items-baseline gap-4">
@@ -49,7 +65,7 @@ function ProjectBlock({ project }) {
             <span className="eyebrow">{project.type}</span>
           </div>
 
-          <h3 className="mt-4 text-3xl md:text-[2.6rem]">{project.title}</h3>
+          <SplitText as="h3" text={project.title} className="mt-4 text-3xl md:text-[2.6rem]" />
           {project.subtitle ? (
             <p className="mt-2 font-display text-lg text-ink-3">{project.subtitle}</p>
           ) : null}
@@ -75,7 +91,7 @@ function ProjectBlock({ project }) {
         </div>
 
         <div className="min-w-0 lg:col-span-7">
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6">
+          <div className="project-gallery grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6">
             {project.images.map((image) => (
               <ProjectImage key={image.src} image={image} />
             ))}
@@ -92,8 +108,8 @@ export default function Projects() {
       <div className="wrap py-16 md:py-24">
         <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="eyebrow">01 — Projets</p>
-            <h2 className="mt-4 text-section">Sélection de projets</h2>
+            <p className="eyebrow">02 — Projets</p>
+            <SplitText text="Sélection de projets" className="mt-4 text-section" />
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-ink-2">
             Quatre projets académiques et confidentiels : conception d’ensemble résidentiel,
@@ -107,7 +123,7 @@ export default function Projects() {
               <li key={project.id}>
                 <a
                   href={`#project-${project.id}`}
-                  className="group flex cursor-pointer items-baseline gap-4 border-b border-line py-5 transition-colors duration-200 hover:bg-paper md:gap-8 md:px-3"
+                  className="row-fill group relative flex cursor-pointer items-baseline gap-4 border-b border-line py-5 md:gap-8 md:px-3"
                 >
                   <span className="font-display text-xs font-semibold tracking-[0.18em] text-accent">
                     {project.number}

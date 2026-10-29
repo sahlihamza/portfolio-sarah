@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Contenu du portfolio — source : dossier Canva « portfolio » de Zaiter Sarra
  * (DAHJxAM6Mp4) + CV à venir.
  */
@@ -10,7 +10,7 @@ export const profile = {
   role: 'Étudiante en architecture',
   school: 'École Nationale d’Architecture et d’Urbanisme de Tunis',
   year: '4ᵉ année',
-  promo: 'Architecture · 2025–2026',
+  // promo: 'Architecture · 2025–2026',
   location: 'Menzel Jemil, Bizerte',
   email: 'sarrahzaiter@gmail.com',
   phone: '+216 52 543 545',
@@ -22,7 +22,7 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    'Étudiante en architecture à l’École Nationale d’Architecture et d’Urbanisme de Tunis, actuellement admise en 4ᵉ année, je suis passionnée par la conception architecturale, la représentation graphique et la création d’espaces alliant fonctionnalité et sensibilité.',
+    'Étudiante en architecture à l’École Nationale d’Architecture et d’Urbanisme de Tunis, actuellement en 4ᵉ année, je suis passionnée par la conception architecturale, la représentation graphique et la création d’espaces alliant fonctionnalité et sensibilité.',
     'Au cours de mon parcours académique, j’ai développé un intérêt particulier pour l’architecture contemporaine, le rapport entre l’usager et l’espace ainsi que les outils numériques de conception et de visualisation.',
     'Je maîtrise plusieurs logiciels de représentation et de modélisation tels qu’AutoCAD, TwinMotion, Lumion, Adobe Photoshop, avec une initiation au BIM à travers Autodesk Revit.',
     'À travers ce portfolio, je présente une sélection de projets académiques reflétant mon évolution, ma démarche conceptuelle et ma vision de l’architecture.',
@@ -38,11 +38,11 @@ export const about = {
     },
   ],
   software: [
-    { name: 'AutoCAD', note: 'Dessin technique' },
-    { name: 'TwinMotion', note: 'Visualisation temps réel' },
-    { name: 'Lumion', note: 'Rendu photoréaliste' },
-    { name: 'Adobe Photoshop', note: 'Retouche & mise en page' },
-    { name: 'Autodesk Revit', note: 'BIM — initiation' },
+    { name: 'AutoCAD', logo: '/logos/autocad.svg', note: 'Dessin technique' },
+    { name: 'Twinmotion', logo: '/logos/twinmotion.svg', note: 'Visualisation temps réel' },
+    { name: 'Lumion', logo: '/logos/lumion.ico', note: 'Rendu photoréaliste' },
+    { name: 'Adobe Photoshop', logo: '/logos/photoshop.svg', note: 'Retouche & mise en page' },
+    { name: 'Autodesk Revit', logo: '/logos/revit.svg', note: 'BIM — initiation' },
   ],
   languages: [
     { name: 'Arabe', level: 'Langue maternelle' },
@@ -77,15 +77,69 @@ export const projects = [
     ],
     images: [
       {
+        src: '/images/soukra-perspective.webp',
+        alt: 'Vue en perspective de la bande commerciale et des îlots résidentiels de la Soukra',
+        caption: 'Perspective — bande commerciale',
+        span: 'half',
+      },
+      {
+        src: '/images/soukra-plan-masse.png',
+        alt: 'Plan masse de l’ensemble résidentiel et de ses quatre îlots',
+        caption: 'Plan masse — organisation des îlots',
+        span: 'half',
+      },
+      {
         src: '/images/soukra-facade.png',
         alt: 'Élévation photoréaliste de la façade principale de l’ensemble résidentiel de la Soukra',
         caption: 'Élévation sud — ensemble résidentiel, La Soukra',
         span: 'wide',
       },
       {
+        src: '/images/soukra-plan-rdc.png',
+        alt: 'Plan du rez-de-chaussée du projet résidentiel de la Soukra',
+        caption: 'Plan du rez-de-chaussée',
+        span: 'half',
+      },
+      {
+        src: '/images/soukra-plan-1er-etage.png',
+        alt: 'Plan d’un étage de l’îlot résidentiel de la Soukra',
+        caption: 'Plan d’étage — niveau courant',
+        span: 'half',
+      },
+      {
+        src: '/images/soukra-plan-2eme-etage.png',
+        alt: 'Plan d’un étage supérieur de l’îlot résidentiel de la Soukra',
+        caption: 'Plan d’étage — niveau supérieur',
+        span: 'half',
+      },
+      {
         src: '/images/soukra-coupe.png',
         alt: 'Coupe architecturale A-A de l’îlot résidentiel montrant les niveaux et les matériaux',
         caption: 'Coupe A-A — distribution des niveaux',
+        span: 'half',
+      },
+      {
+        src: '/images/soukra-residence-nuit.webp',
+        alt: 'Vue nocturne d’une résidence de l’ensemble de la Soukra',
+        caption: 'Vue nocturne — résidence',
+        span: 'wide',
+      },
+      {
+        src: '/images/soukra-interieur-sejour.webp',
+        alt: 'Vue intérieure d’un séjour lumineux de la résidence',
+        caption: 'Intérieur — séjour',
+        span: 'half',
+      },
+      {
+        src: '/images/soukra-interieur-soiree.webp',
+        alt: 'Vue en soirée d’un salon de la résidence',
+        caption: 'Intérieur — salon en soirée',
+        span: 'half',
+      },
+      {
+        src: '/images/soukra-chambre.webp',
+        alt: 'Vue intérieure d’une chambre de la résidence',
+        caption: 'Intérieur — chambre',
         span: 'half',
       },
     ],
@@ -106,6 +160,18 @@ export const projects = [
     ],
     images: [
       {
+        src: '/images/halle-plan-masse.png',
+        alt: 'Plan masse de la halle et de ses accès au centre urbain nord',
+        caption: 'Plan masse — implantation de la halle',
+        span: 'half',
+      },
+      {
+        src: '/images/halle-plan-rdc.png',
+        alt: 'Plan du rez-de-chaussée de la halle événementielle',
+        caption: 'Plan du rez-de-chaussée',
+        span: 'half',
+      },
+      {
         src: '/images/halle-jour.png',
         alt: 'Vue de jour de la halle événementielle, large couverture en béton au milieu d’arbres',
         caption: 'Vue d’ensemble — couverture protectrice',
@@ -118,9 +184,15 @@ export const projects = [
         span: 'half',
       },
       {
-        src: '/images/halle-plan.png',
-        alt: 'Plan masse de la halle événementielle en trait blanc sur fond noir',
-        caption: 'Plan masse — trame structurelle',
+        src: '/images/halle-vue-aerienne.webp',
+        alt: 'Vue aérienne nocturne de la halle événementielle dans son quartier',
+        caption: 'Vue aérienne — insertion urbaine',
+        span: 'wide',
+      },
+      {
+        src: '/images/halle-interieur.webp',
+        alt: 'Vue intérieure de la structure de la halle événementielle',
+        caption: 'Intérieur — portée et structure',
         span: 'wide',
       },
     ],
@@ -141,77 +213,23 @@ export const projects = [
     ],
     images: [
       {
-        src: '/images/plan-etage-v1.png',
-        alt: 'Plan d’étage d’une cliente privée : chambre parentale, salon, cuisine, couloir et salles de bain',
-        caption: 'Plan d’étage — répartition des espaces de vie',
+        src: '/images/menzel-plan-etage.png',
+        alt: 'Plan aménagé de l’étage résidentiel à Menzel Jemil',
+        caption: 'Plan d’étage — Menzel Jemil',
         span: 'half',
       },
       {
-        src: '/images/interieur-salon.png',
-        alt: 'Rendu photoréaliste d’un salon lumineux avec mobilier contemporain et grandes baies',
-        caption: 'Rendu photoréaliste — salon',
-        span: 'half',
-      },
-      {
-        src: '/images/interieur-nuit.png',
-        alt: 'Rendu photoréaliste d’un salon en soirée, éclairage indirect et sol en bois',
-        caption: 'Rendu photoréaliste — ambiance nocturne',
+        src: '/images/menzel-axonometrique.webp',
+        alt: 'Vue axonométrique meublée de l’étage résidentiel à Menzel Jemil',
+        caption: 'Vue 3D — aménagement intérieur',
         span: 'wide',
-      },
-    ],
-  },
-  {
-    id: 'reamenagement',
-    number: '04',
-    title: 'Réaménagement d’un étage — client privé',
-    subtitle: 'V1 → V2',
-    type: 'Projet non académique',
-    location: 'Tunis',
-    surface: '144 m²',
-    summary:
-      'Deux hypothèses d’aménagement d’un même étage : optimiser la circulation, puis ajuster matière et lumière.',
-    body: [
-      'Projet non académique réalisé pour une cliente privée, portant sur l’aménagement d’un étage résidentiel adapté aux besoins fonctionnels et spatiaux.',
-      'La seconde hypothèse affine la distribution des pièces de vie et rééquilibre le rapport des surfaces, en conservant la structure du plan d’origine.',
-      'Les moodboards fixent la palette de matériaux et l’ambiance lumineuse retenues pour la version finale.',
-    ],
-    images: [
-      {
-        src: '/images/plan-etage-v2.png',
-        alt: 'Deux versions du plan d’étage V1 et V2 comparant la distribution des pièces',
-        caption: 'Plans V1 & V2 — deux hypothèses de distribution',
-        span: 'half',
-      },
-      {
-        src: '/images/moodboard-global.png',
-        alt: 'Moodboard général du projet : axonométrie, palette de matériaux et références',
-        caption: 'Moodboard général — matières & références',
-        span: 'half',
-      },
-      {
-        src: '/images/moodboard-salon.png',
-        alt: 'Moodboard du salon : mobilier, éclairage, numérotation et palette chaude',
-        caption: 'Moodboard — salon',
-        span: 'half',
-      },
-      {
-        src: '/images/moodboard-chambre.png',
-        alt: 'Moodboard de la chambre : lit, rangements et échantillons de finition',
-        caption: 'Moodboard — suite parentale',
-        span: 'half',
-      },
-      {
-        src: '/images/moodboard-cuisine.png',
-        alt: 'Moodboard de la cuisine : meubles, équipements et échantillons',
-        caption: 'Moodboard — cuisine',
-        span: 'half',
       },
     ],
   },
 ]
 
 export const nav = [
-  { id: 'projets', label: 'Projets' },
   { id: 'apropos', label: 'À propos' },
+  { id: 'projets', label: 'Projets' },
   { id: 'contact', label: 'Contact' },
 ]

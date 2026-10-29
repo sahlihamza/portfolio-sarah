@@ -4,6 +4,8 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
+import Marquee from './components/motion/Marquee'
+import ScrollProgress from './components/motion/ScrollProgress'
 
 export default function App() {
   return (
@@ -15,12 +17,15 @@ export default function App() {
         Aller au contenu principal
       </a>
 
+      <ScrollProgress />
       <Header />
 
       <main id="contenu">
         <Hero />
-        <Projects />
+        <Marquee items={['Architecture', 'Conception', 'Plans & coupes', 'Maquettes 3D', 'Rendus', 'Espace']} />
         <About />
+        <Marquee reverse items={['AutoCAD', 'Revit', 'Lumion', 'Twinmotion', 'Photoshop']} />
+        <Projects />
         <Contact />
       </main>
 
